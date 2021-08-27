@@ -1,0 +1,12 @@
+# Ignore all files by default
+*
+
+# Include README doc
+!README.md
+
+# Include core library
+!lib/**/*
+
+# Include package.json files
+!package.json
+!package-lock.json

@@ -1,0 +1,20 @@
+# OS and IDE
+.DS_Store
+.idea/
+.vscode/
+*.orig
+jsconfig.json
+
+# Logs and envs
+**/*.log
+**/logs
+coverage/
+
+# Application and generated
+**/*.lock
+**/.eslintcache
+**/.npm
+**/node_modules/
+build/
+hooks/
+testosa.config.json

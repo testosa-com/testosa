@@ -1,0 +1,71 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:jest/all"
+  ],
+  "globals": {
+    "after": true,
+    "afterAll": true,
+    "afterEach": true,
+    "before": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "Cypress": true,
+    "cy": true,
+    "describe": true,
+    "document": true,
+    "expect": true,
+    "it": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": [
+    "import"
+  ],
+  "root": true,
+  "rules": {
+    "jest/no-hooks": 0,
+    "jest/prefer-expect-assertions": 0,
+    "jest/valid-title": [
+      "error",
+      {"ignoreTypeOfDescribeName": true}
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed",
+      { "requireReturnForObjectLiteral": true }
+    ],
+    "arrow-parens": ["error", "always"],
+    "camelcase": ["error", {
+      "ignoreDestructuring": false,
+      "properties": "always"
+    }],
+    "class-methods-use-this": "off",
+    "comma-dangle": ["error", "never"],
+    "import/order": ["error", {
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "groups": ["builtin", "external", "internal"],
+      "newlines-between": "never"
+    }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "no-case-declarations": 0,
+    "no-console": 2,
+    "no-plusplus": 0,
+    "no-restricted-properties": 0,
+    "object-property-newline": ["error", {}],
+    "sort-keys": "error"
+  }
+}
