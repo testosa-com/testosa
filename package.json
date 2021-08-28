@@ -10,20 +10,21 @@
     "start": "./scripts/start.sh",
     "test": "./scripts/test.sh"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
       "pre-push": "npm run check:branch-name"
     }
   },
+  "bin": {
+    "testosa": "./bin/cli.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ajv": "^8.6.2",
+    "ajv-errors": "^3.0.0",
     "ajv-formats": "^2.1.1",
     "axios": "^0.21.1",
     "callsite": "^1.0.0",
@@ -34,7 +35,8 @@
     "lodash": "^4.17.21",
     "qs": "^6.10.1",
     "uuid": "^8.3.2",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "yargs": "^17.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
