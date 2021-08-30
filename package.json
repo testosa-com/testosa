@@ -26,6 +26,7 @@
     "ajv": "^8.6.2",
     "ajv-errors": "^3.0.0",
     "ajv-formats": "^2.1.1",
+    "ajv-keywords": "^5.0.0",
     "axios": "^0.21.1",
     "callsite": "^1.0.0",
     "chalk": "^4.1.2",
