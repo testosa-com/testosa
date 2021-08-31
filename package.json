@@ -2,7 +2,7 @@
   "name": "testosa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "check:commits-squashed": "./scripts/check-commits-squashed.sh",
     "lint": "./scripts/lint.sh",

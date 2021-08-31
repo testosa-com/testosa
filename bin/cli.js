@@ -4,5 +4,6 @@ const yargs = require('yargs/yargs');
 const testOpenApiPaths = require('../lib');
 
 const { argv } = yargs(hideBin(process.argv));
+const isCli = true;
 
-testOpenApiPaths(argv);
+testOpenApiPaths(argv, isCli);

@@ -5,6 +5,7 @@
 !README.md
 
 # Include core library
+!bin/**/*
 !lib/**/*
 
 # Include package.json files
