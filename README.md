@@ -102,7 +102,7 @@ If you're leveraging test hooks, include this option to specify the relative pat
 The relative file path to your OpenAPI specification file.
 
 ## Hooks
-Testosa provides a hooks interface to perform actions before all and/or each endpoint test. Hooks are currently supported as JavaScript functions, which much be exported from a single file on the default object.
+Testosa provides a hooks interface to perform actions before and after all and/or each endpoint test. Hooks are currently only supported in JavaScript and are defined as a _module_ or _class_ that implements `afterAll`, `afterEach`, `beforeAll` and `beforeEach` methods that will be called when any of those events occurs.
 
 ### Usage
 To start using hooks:
@@ -161,7 +161,7 @@ Typical use cases:
 #### `beforeEach(transaction)`
 Runs before **each** individual test has executed. The `beforeEach()` function takes a single parameter, `transaction` containing details about the test.
 
-> **Important**: With the exception of the sub-object `transaction.actual.request`, all other properties in the `transaction` object are _read only_ and may not be modified.
+> **Important**: With the exception of the sub-object `transaction.actual.request` and `transaction.skip`, all other properties in the `transaction` object are _read only_ and may not be modified.
 
 Typical use cases:
 - Performing set up before each test executes. For example:
