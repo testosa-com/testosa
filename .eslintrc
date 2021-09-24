@@ -35,6 +35,7 @@
   "root": true,
   "rules": {
     "jest/no-hooks": 0,
+    "jest/prefer-called-with": 0,
     "jest/prefer-expect-assertions": 0,
     "jest/valid-title": [
       "error",
