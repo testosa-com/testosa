@@ -16,5 +16,3 @@ coverage/
 **/.npm
 **/node_modules/
 build/
-hooks/
-testosa.config.json
