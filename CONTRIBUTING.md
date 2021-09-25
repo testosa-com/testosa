@@ -1,6 +1,7 @@
 # Contributing
 
 ## Contents
+* [Dev Setup](#dev-setup)
 * [Code Style](#code-style)
 * [Git Policies and Workflows](#git-policies-and-workflows)
   * [Branch Naming](#branch-naming)
@@ -11,6 +12,16 @@
   * [Revert vs. Rollback](#revert-vs-rollback)
 * [Dependency Updates](#dependency-updates)
   * [Merging Dependency Updates](#merging-dependency-updates)
+
+## Dev Setup
+### System Requirements
+Before getting started, ensure you have the following frameworks installed on your development machine:
+- Node.js 12.x
+- NPM 6.x
+
+### Install Dependencies
+- Clone repository: `git clone https://github.com/testosa-com/testosa.git`
+- Install dependencies: `npm i`
 
 ## Code Style
 In an effort to maintain code quality and consistency across the formatting of the codebase, we leverage [Eslint](https://eslint.org/) and [Prettier](https://prettier.io/) to establish formatting and code style norms. Our linting rules are based on the [Airbnb Style Guide](https://github.com/airbnb/javascript), which is represented in the [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) configuration. Our own _.eslintrc_ file applies a few configuration options, which override the AirBnb configuration defaults. And, the aim is to keep these exceptions to a minimum.
