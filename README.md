@@ -8,19 +8,23 @@ Fast, **auto-generated** end-to-end tests to validate your backend HTTP API usin
 - Test hooks
 
 ## Table of Contents
-1. [System Requirements](#system-requirements)
-2. [Installation and Usage](#installation-and-usage)
+1. [Contributing](#contributing)
+2. [System Requirements](#system-requirements)
+3. [Installation and Usage](#installation-and-usage)
    - [Install](#install)
    - [Usage: CLI tool (recommended)](#usage-cli-tool-recommended)
      - [Running with configuration file (recommended)](#running-with-configuration-file-recommended)
      - [Running with command line argument](#running-with-command-line-arguments)
    - [Usage: NPM module](#usage-npm-module)
-3. [Configuration](#configuration)
+4. [Configuration](#configuration)
    - [Options](#options)
-4. [Hooks](#hooks)
+5. [Hooks](#hooks)
    - [Usage](#usage)
    - [Methods reference](#methods-reference)
    - [Examples](#examples)
+
+## Contributing
+Read our [contributing guide](./CONTRIBUTING.md) to learn about our development process and to propose bugfixes and improvements.
 
 ## System Requirements
 | Feature                    | Supported Technology  |
