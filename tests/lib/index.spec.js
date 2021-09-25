@@ -59,6 +59,7 @@ describe(generateSpecName(), () => {
   let testsMetaData;
   let logInfoSpy;
   let logErrorSpy;
+  let processExitSpy;
 
   beforeEach(() => {
     specMethod = chance.string();
@@ -155,12 +156,15 @@ describe(generateSpecName(), () => {
 
     logInfoSpy = jest.spyOn(log, 'info').mockImplementation(() => {});
     logErrorSpy = jest.spyOn(log, 'error').mockImplementation(() => {});
+
+    processExitSpy = jest.spyOn(process, 'exit').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.resetAllMocks();
     logInfoSpy.mockReset();
     logErrorSpy.mockReset();
+    processExitSpy.mockReset();
   });
 
   describe('passing specs', () => {
