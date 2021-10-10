@@ -69,6 +69,16 @@ describe(generateSpecName(), () => {
     expect(resolvedEndpoint).toStrictEqual(endpoint);
   });
 
+  it('should not set the query parameter if the parameter is deprecated', () => {
+    paramLocation = 'query';
+    pathLevelParamsSpecs.in = paramLocation;
+    pathLevelParamsSpecs.deprecated = false;
+    endpoint = '/mock-endpoint';
+    resolvedEndpoint = getResolveTestEndpoint(endpoint, pathLevelParamsSpecs);
+
+    expect(resolvedEndpoint).toStrictEqual(endpoint);
+  });
+
   it('should not set the query parameter if parameter value is generated', () => {
     paramLocation = 'query';
     pathLevelParamsSpecs.in = paramLocation;

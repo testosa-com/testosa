@@ -52,6 +52,13 @@ describe(generateSpecName(), () => {
     expect(result).toStrictEqual({});
   });
 
+  it('should return an empty object if the param is deprecated', () => {
+    operationLevelParams[0].deprecated = true;
+    result = getTestRequestHeaders(operationLevelParams);
+
+    expect(result).toStrictEqual({});
+  });
+
   it('should include an object with Content-Type if one is passed in', () => {
     const {
       name,

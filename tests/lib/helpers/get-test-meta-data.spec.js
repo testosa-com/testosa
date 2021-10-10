@@ -95,4 +95,12 @@ describe(generateSpecName(), () => {
 
     expect(results).toStrictEqual(expectedMetaData);
   });
+
+  it('should include meta data with skip set to true if the spec is deprecated', () => {
+    pathSpecs[endpoint][method].deprecated = true;
+    results = getTestMetaData(pathSpecs, excludedMethods, excludedStatusCodes);
+    expectedMetaData[0].skip = true;
+
+    expect(results).toStrictEqual(expectedMetaData);
+  });
 });
