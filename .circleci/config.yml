@@ -27,6 +27,20 @@ jobs:
       - run:
           name: Run unit tests
           command: npm run test
+      - run:
+          name: Check squashed commit messages
+          command: >
+            if [ "${CIRCLE_BRANCH}" != "master" ];
+            then
+              npm run check:commits-squashed
+            fi
+      - run:
+          name: Lint commit message in feature branch
+          command: >
+            if [ "${CIRCLE_BRANCH}" != "master" ];
+            then
+              npm run commitlint:feature-to-master-branch
+            fi
 
 workflows:
   version: 2
