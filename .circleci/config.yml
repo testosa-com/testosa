@@ -1,0 +1,38 @@
+version: 2.1
+jobs:
+  "Lint and Test":
+    docker:
+      - image: node:12.16.1-alpine3.9
+    steps:
+      - checkout
+      - run:
+          name: Install system dependencies
+          command: apk update && apk upgrade && apk add --no-cache bash git
+      - run:
+          name: Check branch name
+          command: >
+            if [ "${CIRCLE_BRANCH}" != "master" ];
+            then
+              npm run check:branch-name
+            fi
+      - restore_cache:
+          keys:
+            - node_modules-{{ checksum "package.json" }}
+      - run:
+          name: Install npm modules
+          command: npm ci
+      - run:
+          name: Run Eslint & Prettier
+          command: npm run lint
+      - run:
+          name: Run unit tests
+          command: npm run test
+
+workflows:
+  version: 2
+  "Lint and Test":
+    jobs:
+      - "Lint and Test":
+          filters:
+            branches:
+              only: master

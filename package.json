@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
+    "check:branch-name": "./scripts/check-branch-name.sh",
     "check:commits-squashed": "./scripts/check-commits-squashed.sh",
     "lint": "./scripts/lint.sh",
     "lint:fix": "./scripts/lint-fix.sh",
