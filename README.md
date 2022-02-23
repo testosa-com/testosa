@@ -26,6 +26,7 @@ Fast, **auto-generated** end-to-end tests to validate your backend HTTP API usin
    - [Methods reference](#methods-reference)
    - [Methods parameter (`transcation`)](#methods-parameter-transaction)
    - [Examples](#examples)
+6. [Supported OpenAPI features](./OPEN_API_FEATURE_SUPPORT.md)
 
 ## Contributing
 Read our [contributing guide](./CONTRIBUTING.md) to learn about our development process and to propose bugfixes and improvements.
@@ -48,7 +49,7 @@ npm install testosa --save-dev
 
 #### Running with configuration file (recommended)
 1. Create your configuration:
-   - When running Testosa using a configuration file, you may use its convenience initialization prompt. Testosa will ask a few questions and will create a basic configuration file at _./testosa.config.json_. You may later extend this config with additional options you need. Take a look at the [configuration section](#configuration) for all config options.
+  - When running Testosa using a configuration file, you may use its convenience initialization prompt. Testosa will ask a few questions and will create a basic configuration file at _./testosa.config.json_. You may later extend this config with additional options you need. Take a look at the [configuration section](#configuration) for all config options.
    ```shell
    ./node_modules/.bin/testosa --init
    ```
@@ -166,7 +167,7 @@ Runs once before **all** tests have executed. This function takes no parameters 
 
 Typical use cases:
 - Performing global set up before your test run. For example:
-  - provisioning your test database 
+  - provisioning your test database
   - creating and authenticating mock users
   - seeding data in your database
   - etc.
@@ -251,7 +252,7 @@ let accessToken;
 const afterAll = async () => {
   // Destroy test database after all tests
   await destroyTestDb();
-  
+
   // Delete mock user after all tests
   await deleteMockUser(accessToken);
 };
@@ -266,7 +267,7 @@ const afterEach = async (transaction) => {
 const beforeAll = async () => {
   // Create mock database before starting all tests
   await createTestDb();
-  
+
   // Create and authenticate a mock user to be used for all authenticated requests
   const userName = 'mock-user@my-domain.com';
   const password = 's3cret!123';
@@ -279,7 +280,7 @@ const beforeEach = async (transaction) => {
   if (transaction.operationId === 'get-users' && transaction.expectedStatusCode === 200) {
     transaction.skip = true;
   }
-  
+
   // Skip all tests under the PUT /users path definition
   if (transaction.expected.method === 'PUT' && transaction.expected.path === '/users') {
     transaction.skip = true;
@@ -290,7 +291,7 @@ const beforeEach = async (transaction) => {
     const vehicle = await createMockVehicle(accessToken);
     transaction.expected.path = transaction.expected.path.replace('{vehicleId}', vehicle.id)
   }
-  
+
   return transaction;
 };
 
