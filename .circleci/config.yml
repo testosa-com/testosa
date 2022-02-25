@@ -1,4 +1,11 @@
 version: 2.1
+
+commands:
+  npm-auth:
+    description: Authenticate with NPM registry
+    steps:
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+
 jobs:
   "Lint and Test":
     docker:
@@ -41,12 +48,39 @@ jobs:
             then
               npm run commitlint:feature-to-master-branch
             fi
+  "Release Library":
+    working_directory: ~/ttsa-npm-lib
+    docker:
+      - image: node:12.16.1
+    steps:
+      - checkout
+      - npm-auth
+      - run:
+          name: Install library dependencies
+          command: npm ci
+      - run:
+          name: Release
+          command: npm run release
+      - run:
+          name: Save library release git hash
+          command: echo $(git rev-parse HEAD) > ~/ttsa-npm-lib/release-sha.txt
+      - persist_to_workspace:
+          root: ~/ttsa-npm-lib
+          paths:
+            - ./release-sha.txt
 
 workflows:
   version: 2
-  "Lint and Test":
+  "Lint and Test > Release Library":
     jobs:
       - "Lint and Test":
           filters:
             branches:
               only: master
+      - "Release Library":
+          context: testosa-release
+          filters:
+            branches:
+              only: master
+          requires:
+            - "Lint and Test"
