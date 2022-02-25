@@ -1,0 +1,11 @@
+**
+!docs/*
+!src/*
+!static/*
+!babel.config.js
+!Dockerfile
+!docusaurus.config.js
+!package.json
+!package-lock.json
+!sidebars.js
+
