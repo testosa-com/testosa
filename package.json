@@ -19,10 +19,22 @@
       "pre-push": "npm run check:branch-name"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/testosa-com/testosa"
+  },
   "bin": {
     "testosa": "./bin/cli.js"
   },
-  "keywords": [],
+  "keywords": [
+    "api",
+    "automated",
+    "documentation",
+    "openapi",
+    "swagger",
+    "test",
+    "testing"
+  ],
   "license": "ISC",
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.3",

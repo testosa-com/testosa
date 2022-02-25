@@ -1,0 +1,147 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #38B856;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+html[data-theme='dark'] {
+  --ifm-color-primary: #8AC4F3;
+  --ifm-color-primary-dark: #25669a;
+  --ifm-color-primary-darker: #105185;
+  --ifm-color-primary-darkest: #053d6b;
+  --ifm-color-primary-light: #99c9f1;
+  --ifm-color-primary-lighter: #c3def3;
+  --ifm-color-primary-lightest: #FFFFFF;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  color: #00334B;
+}
+
+html[data-theme='dark'] {
+  color: #ADBAC7;
+}
+
+.navbar {
+  background-color: #F7F8F2;
+  border-color: #F7F8F2;
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: #1C2128;
+}
+
+.navbar__title {
+  font-family: monospace;
+  font-size: 21px;
+  text-transform: lowercase;
+}
+
+.hero {
+  background-color: #F7F8F2;
+  color: #00334B;
+}
+
+html[data-theme='dark'] .hero {
+  background-color: #1C2128;
+  color: #ADBAC7;
+}
+
+html[data-theme='dark'] .main-wrapper {
+  background-color: #22272E;
+}
+
+.hero__subtitle {
+  margin: 0 auto 50px;
+  max-width: 800px;
+}
+
+.logo-lg {
+  height: 80px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
+  }
+}
+
+.hero .text {
+  color: #38B856;
+  display: inline-block;
+  font-family: monospace;
+}
+
+html[data-theme='dark'] .hero .text {
+  color: #2189AF;
+}
+
+.hero .cursor {
+  background-color: #38b856;
+  display: inline-block;
+  margin-left: 0.5em;
+  width: 10px;
+  line-height: 1em;
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 1.1s;
+}
+
+html[data-theme='dark'] .hero .cursor {
+  background-color: #2189AF;
+}
+
+.button {
+  background-color: #00334B;
+  border-radius: 100px;
+  border-color: #00334B;
+  text-transform: uppercase;
+}
+
+html[data-theme='dark'] .button {
+  background-color: #539BF5;
+  color: white;
+}
+
+.footer {
+  background-color: #38B856;
+  color: #DEF0DE;
+}
+
+html[data-theme='dark'] .footer {
+  background-color: #2D333B;
+}

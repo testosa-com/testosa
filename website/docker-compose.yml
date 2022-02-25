@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  website:
+    build: .
+    container_name: ttsa-website
+    ports:
+      - 80:80
+      - 3000:3000
+      - 35729:35729
+    working_dir: /app

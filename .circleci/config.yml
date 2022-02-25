@@ -1,5 +1,9 @@
 version: 2.1
 
+orbs:
+  aws-ecr: circleci/aws-ecr@6.10.0
+  aws-ecs: circleci/aws-ecs@1.2.0
+
 commands:
   npm-auth:
     description: Authenticate with NPM registry
@@ -68,6 +72,31 @@ jobs:
           root: ~/ttsa-npm-lib
           paths:
             - ./release-sha.txt
+  "Build and Deploy Website":
+    working_directory: ~/ttsa-npm-lib
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/ttsa-npm-lib
+      - run:
+          name: Checkout release SHA
+          command: git reset --hard $(cat ~/ttsa-npm-lib/release-sha.txt)
+      - aws-ecr/build-and-push-image:
+          account-url: AWS_ECR_ACCOUNT_URL
+          checkout: false
+          create-repo: true
+          dockerfile: Dockerfile
+          no-output-timeout: 20m
+          path: ./website
+          region: AWS_DEFAULT_REGION
+          repo: ttsa-website
+          tag: latest,$(git rev-parse HEAD)
+      - aws-ecs/update-service:
+          cluster-name: development
+          container-image-name-updates: container=ttsa-website,tag=$(git rev-parse HEAD)
+          family: ttsa-website
 
 workflows:
   version: 2
@@ -78,9 +107,16 @@ workflows:
             branches:
               only: master
       - "Release Library":
-          context: testosa-release
+          context: testosa-prod
           filters:
             branches:
               only: master
           requires:
             - "Lint and Test"
+      - "Build and Deploy Website":
+          context: testosa-prod
+          filters:
+            branches:
+              only: /(master|[0-9]+\.x\.x)/
+          requires:
+            - "Release Library"
