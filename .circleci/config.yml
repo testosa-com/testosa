@@ -55,7 +55,7 @@ jobs:
   "Release Library":
     working_directory: ~/ttsa-npm-lib
     docker:
-      - image: node:12.16.1
+      - image: node:14.19.0
     steps:
       - checkout
       - npm-auth
