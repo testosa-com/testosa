@@ -60,8 +60,8 @@ jobs:
       - checkout
       - npm-auth
       - run:
-          name: Install library dependencies
-          command: npm ci
+          name: Install npm modules
+          command: npm ci && npm ci --prefix=website
       - run:
           name: Release
           command: npm run release
