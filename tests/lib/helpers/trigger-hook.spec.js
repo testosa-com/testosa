@@ -198,6 +198,7 @@ describe(generateSpecName(), () => {
   });
 
   describe(`${TEST_HOOK_AFTER_ALL}, ${TEST_HOOK_AFTER_EACH}, ${TEST_HOOK_BEFORE_ALL}`, () => {
+    // eslint-disable-next-line
     [TEST_HOOK_AFTER_ALL, TEST_HOOK_AFTER_EACH, TEST_HOOK_BEFORE_ALL].forEach(
       (hook) => {
         it(`should return the original transaction if hook is '${hook}'`, async () => {

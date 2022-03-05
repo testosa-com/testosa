@@ -31,7 +31,7 @@ jobs:
             - node_modules-{{ checksum "package.json" }}
       - run:
           name: Install npm modules
-          command: npm ci
+          command: npm ci && npm ci --prefix=website
       - run:
           name: Run Eslint & Prettier
           command: npm run lint
@@ -102,10 +102,7 @@ workflows:
   version: 2
   "Lint and Test > Release Library":
     jobs:
-      - "Lint and Test":
-          filters:
-            branches:
-              only: master
+      - "Lint and Test"
       - "Release Library":
           context: testosa-prod
           filters:

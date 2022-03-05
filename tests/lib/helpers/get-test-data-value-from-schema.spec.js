@@ -3,6 +3,7 @@ const _ = require('lodash');
 const getTestDataValueFromSchema = require('../../../lib/helpers/get-test-data-value-from-schema');
 const generateSpecName = require('../../__helpers/generate-spec-name');
 
+// eslint-disable-next-line
 expect.extend({
   toBeAnInteger(received) {
     return {
