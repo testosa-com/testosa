@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/testosa-com/testosa/compare/v1.0.4...v1.0.5) (2022-03-05)
+
+
+### Bug Fixes
+
+* add versioned files in dockerignore ([2d15678](https://github.com/testosa-com/testosa/commit/2d1567895df878cc6e46fa88f616a257d7cdeb8e))
+
 ## [1.0.4](https://github.com/testosa-com/testosa/compare/v1.0.3...v1.0.4) (2022-03-05)
 
 
