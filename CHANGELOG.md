@@ -7,7 +7,7 @@
 
 ## [1.0.1](https://github.com/testosa-com/testosa/compare/v1.0.0...v1.0.1) (2022-03-05)
 
-# 1.0.0 (2022-02-25)
+## 1.0.0 (2022-02-25)
 
 
 ### Bug Fixes
