@@ -1,6 +1,6 @@
 {
   "name": "testosa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automated API contract testing",
   "main": "lib/index.js",
   "scripts": {
