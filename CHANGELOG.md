@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/testosa-com/testosa/compare/v1.0.1...v1.0.2) (2022-03-05)
+
+
+### Bug Fixes
+
+* add png and jgp in gitattributes as binaries ([23e5ed7](https://github.com/testosa-com/testosa/commit/23e5ed7a182848727f6794de09f6a840b096869f))
+
 ## [1.0.1](https://github.com/testosa-com/testosa/compare/v1.0.0...v1.0.1) (2022-03-05)
 
 # 1.0.0 (2022-02-25)
