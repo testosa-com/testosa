@@ -1,5 +1,6 @@
 # Autodetect text files
-* text=auto
+* text=auto eol=lf
 
-# Force the following filetypes to have unix eols, so Windows does not break them
-*.* text eol=lf
+# Handle binary files as such
+*.png binary
+*.jpg binary
