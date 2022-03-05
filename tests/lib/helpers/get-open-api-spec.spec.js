@@ -65,6 +65,7 @@ describe(generateSpecName(), () => {
     expect(processExitSpy).not.toHaveBeenCalled();
   });
 
+  // eslint-disable-next-line
   ['yml', 'yaml'].forEach((extension) => {
     it(`should parse the file as YAML if the extension is ${extension}`, async () => {
       pathExtnameSpy.mockImplementation(() => extension);

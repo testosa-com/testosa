@@ -52,6 +52,7 @@ describe(generateSpecName(), () => {
     );
   });
 
+  // eslint-disable-next-line
   [
     {
       format: 'date-time',

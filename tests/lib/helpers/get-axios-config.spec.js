@@ -3,6 +3,7 @@ const _ = require('lodash');
 const getAxiosConfig = require('../../../lib/helpers/get-axios-config');
 const generateSpecName = require('../../__helpers/generate-spec-name');
 
+// eslint-disable-next-line
 expect.extend({
   objectOrNothing(received) {
     return {
