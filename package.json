@@ -1,7 +1,7 @@
 {
   "name": "testosa",
   "version": "1.0.1",
-  "description": "",
+  "description": "Automated API contract testing",
   "main": "lib/index.js",
   "scripts": {
     "check:branch-name": "./scripts/check-branch-name.sh",
@@ -19,6 +19,7 @@
       "pre-push": "npm run check:branch-name"
     }
   },
+  "homepage": "https://testosa.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/testosa-com/testosa"

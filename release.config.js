@@ -25,6 +25,14 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     '@semantic-release/npm',
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd:
+          // eslint-disable-next-line no-template-curly-in-string
+          './scripts/bump-wiki-version.sh ${nextRelease.version}'
+      }
+    ],
     '@semantic-release/github',
     [
       '@semantic-release/git',
