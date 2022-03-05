@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/testosa-com/testosa/compare/v1.0.3...v1.0.4) (2022-03-05)
+
+
+### Bug Fixes
+
+* map versioned docs in Docker build for website ([0e8961c](https://github.com/testosa-com/testosa/commit/0e8961c3cebcb155a116fe205256dbdd625c2e19))
+
 ## [1.0.3](https://github.com/testosa-com/testosa/compare/v1.0.2...v1.0.3) (2022-03-05)
 
 ## [1.0.2](https://github.com/testosa-com/testosa/compare/v1.0.1...v1.0.2) (2022-03-05)
