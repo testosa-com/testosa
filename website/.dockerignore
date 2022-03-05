@@ -2,10 +2,13 @@
 !docs/*
 !src/*
 !static/*
+!versioned_docs/*
+!versioned_sidebars/*
 !babel.config.js
 !Dockerfile
 !docusaurus.config.js
 !package.json
 !package-lock.json
 !sidebars.js
+!versions.json
 
