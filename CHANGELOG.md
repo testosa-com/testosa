@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/testosa-com/testosa/compare/v1.0.5...v1.0.6) (2022-03-06)
+
+
+### Bug Fixes
+
+* node_modules directory from committed repo history ([f336664](https://github.com/testosa-com/testosa/commit/f3366649b7351f1e0a49a992b2500410fee3bb6e))
+
 ## [1.0.5](https://github.com/testosa-com/testosa/compare/v1.0.4...v1.0.5) (2022-03-05)
 
 
