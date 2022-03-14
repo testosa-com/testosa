@@ -15,6 +15,10 @@ After running `testosa --init`, you'll have a config file, _testosa.config.json_
 Below is a full list of settings to configure the behaviour of Testosa for your test runs.
 
 ## Options
+:::info Note
+The options below can be used in both your _testosa.config.js_ and as CLI arguments if supplying settings directly from the command line. 
+:::
+
 ### apiBaseUrl [string<uri\>] (required)
 Base URL for the API server that you are validating your OpenAPI specification against.
 - Format: URI

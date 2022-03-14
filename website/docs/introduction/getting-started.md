@@ -42,6 +42,8 @@ npm install testosa --save-dev
   --openApiFilePath=<PATH_TO_YOUR_OPEN_API_FILE>
 ```
 
+A full list of available arguments can be found [here](/docs/introduction/configuration#options).
+
 :::info
 If any option is declared in your configuration file AND as is also declared as a command line argument, the value for that option from the command line argument will take precedence.
 :::
