@@ -97,6 +97,31 @@ jobs:
           cluster-name: development
           container-image-name-updates: container=ttsa-website,tag=$(git rev-parse HEAD)
           family: ttsa-website
+  "Build and Publish Docker Image":
+    docker:
+      - image: docker:20.10.11
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/ttsa-npm-lib
+      - run:
+          name: Authenticate Docker Hub
+          command: |
+            echo ${DOCKER_HUB_ACCESS_TOKEN} | \
+            docker login \
+              -u ${DOCKER_HUB_USERNAME} \
+              --password-stdin
+      - run:
+          name: Build Docker image
+          command: |
+            docker build \
+              --no-cache \
+              -t testosa/testosa:latest \
+              -t testosa/testosa:$(cat ~/ttsa-npm-lib/release-sha.txt) \
+              .
+      - run:
+          name: Publish Docker image
+          command: docker image push --all-tags testosa/testosa
 
 workflows:
   version: 2
@@ -117,3 +142,10 @@ workflows:
               only: /(master|[0-9]+\.x\.x)/
           requires:
             - "Release Library"
+      - "Build and Publish Docker Image":
+          context: testosa-prod
+          filters:
+            branches:
+              only: /(master|[0-9]+\.x\.x)/
+          requires:
+            - "Build and Deploy Website"

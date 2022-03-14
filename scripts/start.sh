@@ -2,4 +2,4 @@
 set -e
 
 echo "[Start]"
-nodemon ./lib/index.js
+node ./bin/cli.js "$@"
