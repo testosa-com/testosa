@@ -55,6 +55,7 @@ describe(generateSpecName(), () => {
   let testosaOptions;
   let testosaConfig;
   let isCli;
+  let configFilePath;
   let openApiSpec;
   let testsMetaData;
   let logInfoSpy;
@@ -171,7 +172,11 @@ describe(generateSpecName(), () => {
     it('should generate a test and log the results', async () => {
       await testOpenApiPaths(testosaOptions, isCli);
 
-      expect(getTestosaConfig).toHaveBeenCalledWith(testosaOptions, isCli);
+      expect(getTestosaConfig).toHaveBeenCalledWith(
+        testosaOptions,
+        isCli,
+        configFilePath
+      );
       expect(checkApiAccessibility).toHaveBeenCalledWith(
         testosaConfig.apiBaseUrl,
         testosaConfig.apiServerStartupTimeout
@@ -238,7 +243,11 @@ describe(generateSpecName(), () => {
 
       await testOpenApiPaths(testosaOptions, isCli);
 
-      expect(getTestosaConfig).toHaveBeenCalledWith(testosaOptions, isCli);
+      expect(getTestosaConfig).toHaveBeenCalledWith(
+        testosaOptions,
+        isCli,
+        configFilePath
+      );
       expect(checkApiAccessibility).toHaveBeenCalledWith(
         testosaConfig.apiBaseUrl,
         testosaConfig.apiServerStartupTimeout
@@ -297,7 +306,11 @@ describe(generateSpecName(), () => {
       });
       await testOpenApiPaths(testosaOptions, isCli);
 
-      expect(getTestosaConfig).toHaveBeenCalledWith(testosaOptions, isCli);
+      expect(getTestosaConfig).toHaveBeenCalledWith(
+        testosaOptions,
+        isCli,
+        configFilePath
+      );
       expect(checkApiAccessibility).toHaveBeenCalledWith(
         testosaConfig.apiBaseUrl,
         testosaConfig.apiServerStartupTimeout
@@ -366,7 +379,11 @@ describe(generateSpecName(), () => {
       });
       await testOpenApiPaths(testosaOptions, isCli);
 
-      expect(getTestosaConfig).toHaveBeenCalledWith(testosaOptions, isCli);
+      expect(getTestosaConfig).toHaveBeenCalledWith(
+        testosaOptions,
+        isCli,
+        configFilePath
+      );
       expect(checkApiAccessibility).toHaveBeenCalledWith(
         testosaConfig.apiBaseUrl,
         testosaConfig.apiServerStartupTimeout
@@ -435,7 +452,11 @@ describe(generateSpecName(), () => {
       });
       await testOpenApiPaths(testosaOptions, isCli);
 
-      expect(getTestosaConfig).toHaveBeenCalledWith(testosaOptions, isCli);
+      expect(getTestosaConfig).toHaveBeenCalledWith(
+        testosaOptions,
+        isCli,
+        configFilePath
+      );
       expect(checkApiAccessibility).toHaveBeenCalledWith(
         testosaConfig.apiBaseUrl,
         testosaConfig.apiServerStartupTimeout

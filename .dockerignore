@@ -1,0 +1,8 @@
+**
+!bin/*
+!lib/*
+!scripts/*
+!Dockerfile
+!package.json
+!package-lock.json
+
