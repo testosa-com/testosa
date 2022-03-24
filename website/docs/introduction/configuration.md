@@ -23,6 +23,10 @@ The options below can be used in both your _testosa.config.js_ and as CLI argume
 Base URL for the API server that you are validating your OpenAPI specification against.
 - Format: URI
 
+### apiServerStartupTimeout [integer]
+At the start of each test run, this is the maximum time (in milliseconds) Testosa waits when verifying that your API server is reachable.
+- Default: `5000`
+
 ### excludedMethods [array<string\>]
 An array of HTTP methods that should be skipped when generating tests. Testosa will not attempt to test any method + path combination that includes a method specified in this array.
 - Allowed values: `DELETE`, `GET`, `OPTIONS`, `PATCH`, `POST`, `PUT`, `TRACE`
