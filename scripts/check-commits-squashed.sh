@@ -31,6 +31,7 @@ if [[ $currentBranch =~ $epicBranchRegex ]]; then
   exit 0
 fi
 
+git pull $baseBranch
 commitDiffCount=$(git rev-list --count HEAD $baseBranch)
 
 echo "Found $commitDiffCount commits between the current branch and $baseBranch"
