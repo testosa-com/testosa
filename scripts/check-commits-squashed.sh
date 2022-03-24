@@ -11,10 +11,7 @@ currentBranch=$CIRCLE_BRANCH
 if [[ -n $CIRCLE_PULL_REQUEST ]]; then
   pullRequestUrl=$(echo https://api.github.com/repos/${CIRCLE_PULL_REQUEST:19} | sed "s/\/pull\//\/pulls\//")
 
-  echo $pullRequestUrl
-  base=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" $pullRequestUrl | jq '.base.ref')
-
-  echo $base
+  baseBranch=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" $pullRequestUrl | jq '.base.ref')
 fi
 
 if [ -z $currentBranch ]; then
@@ -39,6 +36,6 @@ commitDiffCount=$(git rev-list --count HEAD "^$baseBranch")
 echo "Found $commitDiffCount commits between the current branch and $baseBranch"
 
 if [[ $commitDiffCount != 1 ]]; then
-  echo "Change requests to the master branch should be squashed to a single commit."
+  echo "Change requests to the $baseBranch branch should be squashed to a single commit."
   exit 1
 fi
