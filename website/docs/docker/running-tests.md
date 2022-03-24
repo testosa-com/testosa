@@ -53,6 +53,7 @@ docker run -it \
   testosa/testosa:latest \
   // highlight-start
   --apiBaseUrl='https://api.your-server.com' \
+  --apiServerStartupTimeout=5000 \
   --excludedMethods='options' 'trace' \
   --excludedStatusCodes=422 500 \
   --hooksFilePath='/app/testosa.hooks.js'
@@ -83,6 +84,7 @@ The mapping for your hooks file inside the container can be set to any path you 
 | `-v /.../testosa.config.json` | Map your Testosa config file to the _exact_ path `/app/testosa.config.json` inside the container |
 | `-v /.../hooks/file.js`       | Map your hooks file to a location within the working directory (`/app`) inside the container     |
 | `--apiBaseUrl`                | Base URL of the API server that tests will be run against                                        |
+| `--apiServerStartupTimeout`   | Maximum time (in milliseconds) Testosa waits when confirming your API server is reachable        |
 | `--excludedMethods`           | Space-delimited list of HTTP methods to skip during your Testosa test run                        |
 | `--excludedStatusCodes`       | Space-delimited list of HTTP status codes to skip during your Testosa test run                   |
 | `--hooksFilePath`             | Path to the hooks file mounted **inside the container**                                          |
