@@ -11,8 +11,12 @@ const createInitialConfigFile = require('../lib/create-initial-config-file');
 const isDockerEnv = require('./helpers/is-docker-env');
 
 const options = yargs(hideBin(process.argv))
+  .number('apiServerStartupTimeout')
   .array('excludedMethods')
   .array(['excludedStatusCodes'])
+  .parserConfiguration({
+    'camel-case-expansion': false
+  })
   .parse();
 const { init } = options;
 const isCli = true;
