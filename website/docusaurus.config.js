@@ -17,6 +17,14 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js')
         },
+        gtag: {
+          anonymizeIP: true,
+          trackingID: '308257789'
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
         }
