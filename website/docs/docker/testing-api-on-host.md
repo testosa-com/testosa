@@ -17,6 +17,7 @@ docker run -it \
   testosa/testosa:latest \
   // highlight-next-line
   --apiBaseUrl='http://host.docker.internal:8080' \
+  --apiServerStartupTimeout=5000 \
   --excludedMethods='options' 'trace' \
   --excludedStatusCodes=422 500 \
   --hooksFilePath='/app/testosa.hooks.js'
