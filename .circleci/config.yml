@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run:
           name: Install system dependencies
-          command: apk update && apk upgrade && apk add --no-cache bash git
+          command: apk update && apk upgrade && apk add --no-cache bash curl git jq
       - run:
           name: Check branch name
           command: >
