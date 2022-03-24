@@ -5,9 +5,16 @@ echo "[Check commits squashed]"
 
 LC_ALL=C
 
-BASE_BRANCH=master
-
+baseBranch=master
 currentBranch=$CIRCLE_BRANCH
+
+if [ -z $CIRCLE_PULL_REQUEST ]; then
+  pullRequestUrl=$(echo https://api.github.com/repos/${CIRCLE_PULL_REQUEST:19} | sed "s/\/pull\//\/pulls\//")
+
+  base=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" $pullRequestUrl | jq '.base.ref')
+
+  echo $base
+fi
 
 if [ -z $currentBranch ]; then
   currentBranch=$(git rev-parse --abbrev-ref HEAD)
@@ -26,9 +33,9 @@ if [[ $currentBranch =~ $epicBranchRegex ]]; then
   exit 0
 fi
 
-commitDiffCount=$(git rev-list --count HEAD "^$BASE_BRANCH")
+commitDiffCount=$(git rev-list --count HEAD "^$baseBranch")
 
-echo "Found $commitDiffCount commits between the current branch and $BASE_BRANCH"
+echo "Found $commitDiffCount commits between the current branch and $baseBranch"
 
 if [[ $commitDiffCount != 1 ]]; then
   echo "Change requests to the master branch should be squashed to a single commit."
