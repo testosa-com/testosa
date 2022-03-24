@@ -7,12 +7,11 @@ LC_ALL=C
 
 baseBranch=master
 currentBranch=$CIRCLE_BRANCH
-echo $CIRCLE_PULL_REQUEST
-echo $CIRCLE_PULL_REQUESTS
-echo "something wrong"
+
 if [ -z $CIRCLE_PULL_REQUEST ]; then
   pullRequestUrl=$(echo https://api.github.com/repos/${CIRCLE_PULL_REQUEST:19} | sed "s/\/pull\//\/pulls\//")
 
+  echo $pullRequestUrl
   base=$(curl -s -H "Authorization: token ${GITHUB_TOKEN}" $pullRequestUrl | jq '.base.ref')
 
   echo $base
