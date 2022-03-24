@@ -8,7 +8,7 @@ LC_ALL=C
 baseBranch=master
 currentBranch=$CIRCLE_BRANCH
 
-if [ -n $CIRCLE_PULL_REQUEST ]; then
+if [[ -n $CIRCLE_PULL_REQUEST ]]; then
   pullRequestUrl=$(echo https://api.github.com/repos/${CIRCLE_PULL_REQUEST:19} | sed "s/\/pull\//\/pulls\//")
 
   echo $pullRequestUrl

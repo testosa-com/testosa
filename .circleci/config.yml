@@ -102,7 +102,8 @@ workflows:
   version: 2
   "Lint and Test > Release Library":
     jobs:
-      - "Lint and Test"
+      - "Lint and Test":
+          context: testosa-prod
       - "Release Library":
           context: testosa-prod
           filters:
