@@ -14,9 +14,15 @@ if [ -z $currentBranch ]; then
 fi
 
 dependabotBranchRegex="^(dependabot)\/npm_and_yarn\/([a-zA-Z0-9_-].+\/)?epic\/(IN|PSS)-[0-9][0-9][0-9]\/.+$"
+epicBranchRegex="^epic"
 
 if [[ $currentBranch =~ $dependabotBranchRegex ]]; then
   printf "Branch $currentBranch is a dependabot branch. Skipping check for squashed commits.\n"
+  exit 0
+fi
+
+if [[ $currentBranch =~ $epicBranchRegex ]]; then
+  printf "Branch $currentBranch is an epic branch. Skipping check for squashed commits.\n"
   exit 0
 fi
 
