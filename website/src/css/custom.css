@@ -145,3 +145,7 @@ html[data-theme='dark'] .button {
 html[data-theme='dark'] .footer {
   background-color: #2D333B;
 }
+
+.footer .footer__item a:hover {
+  color: #DEF0DE;
+}
