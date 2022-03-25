@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/testosa-com/testosa/compare/v1.0.6...v1.1.0) (2022-03-25)
+
+
+### Bug Fixes
+
+* add missing config option, apiServerStartupTimeout ([bc0f4d8](https://github.com/testosa-com/testosa/commit/bc0f4d856e75cfeb37c0a6e469f2499978cda370))
+* correct CSS for better visibility for footer links on hover ([031db2b](https://github.com/testosa-com/testosa/commit/031db2baa64e9ed6667f780544a2a1fb391e9fbf))
+
+
+### Features
+
+* support HTTP HEAD calls ([3c8c134](https://github.com/testosa-com/testosa/commit/3c8c1341775836a04c1c10e9ac5e48e2fbfb6c69))
+* support running testosa in docker ([b5c3ff6](https://github.com/testosa-com/testosa/commit/b5c3ff6812e0cc1b5146f4c7538e2bf4e814cf2b))
+
 ## [1.0.6](https://github.com/testosa-com/testosa/compare/v1.0.5...v1.0.6) (2022-03-06)
 
 
