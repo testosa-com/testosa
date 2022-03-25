@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+. "$(dirname "$0")/_/husky.sh"
+
+echo "\n"
+echo "---------------------"
+echo "Pre-push hook | Husky"
+echo "---------------------"
+
+npm run check:branch-name
+npm run test
