@@ -54,7 +54,7 @@ const Home = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title={`${siteConfig.tagline}`}
       description="Fast, **auto-generated** end-to-end tests to validate your backend
             HTTP API using OpenAPI (formerly Swagger). Testosa reads your
             OpenAPI description and generate tests for each of your endpoints
