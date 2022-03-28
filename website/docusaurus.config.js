@@ -17,7 +17,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js')
         },
-        gtag: {
+        googleAnalytics: {
           anonymizeIP: true,
           trackingID: '308257789'
         },
