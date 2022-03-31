@@ -19,7 +19,7 @@ const config = {
         },
         googleAnalytics: {
           anonymizeIP: true,
-          trackingID: '308257789'
+          trackingID: 'UA-223838638-1'
         },
         sitemap: {
           changefreq: 'weekly',
