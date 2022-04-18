@@ -13,11 +13,11 @@ if [ -z $currentBranch ]; then
   currentBranch=$(git rev-parse --abbrev-ref HEAD)
 fi
 
-dependabotBranchRegex="^(dependabot)\/npm_and_yarn\/([a-zA-Z0-9_-].+\/)?epic\/(IN|PSS)-[0-9][0-9][0-9]\/.+$"
+dependencyUpdateBranch="^(build)\/(lib|website)-dependency-updates"
 epicBranchRegex="^epic"
 
-if [[ $currentBranch =~ $dependabotBranchRegex ]]; then
-  printf "Branch $currentBranch is a dependabot branch. Skipping check for squashed commits.\n"
+if [[ $currentBranch =~ $dependencyUpdateBranch ]]; then
+  printf "Branch $currentBranch is a dependency update branch branch. Skipping check for squashed commits.\n"
   exit 0
 fi
 
