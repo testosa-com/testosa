@@ -34,13 +34,6 @@
   ],
   "root": true,
   "rules": {
-    "jest/no-hooks": 0,
-    "jest/prefer-called-with": 0,
-    "jest/prefer-expect-assertions": 0,
-    "jest/valid-title": [
-      "error",
-      {"ignoreTypeOfDescribeName": true}
-    ],
     "arrow-body-style": [
       "error",
       "as-needed",
@@ -53,6 +46,7 @@
     }],
     "class-methods-use-this": "off",
     "comma-dangle": ["error", "never"],
+    "default-param-last": 0,
     "import/order": ["error", {
       "alphabetize": {
         "order": "asc",
@@ -62,8 +56,16 @@
       "newlines-between": "never"
     }],
     "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jest/no-hooks": 0,
+    "jest/prefer-called-with": 0,
+    "jest/prefer-expect-assertions": 0,
+    "jest/valid-title": [
+      "error",
+      { "ignoreTypeOfDescribeName": true }
+    ],
     "no-case-declarations": 0,
     "no-console": 2,
+    "no-loss-of-precision": 0,
     "no-plusplus": 0,
     "no-restricted-properties": 0,
     "object-property-newline": ["error", {}],
