@@ -1,3 +1,5 @@
+## [1.1.1](https://github.com/testosa-com/testosa/compare/v1.1.0...v1.1.1) (2022-04-18)
+
 # [1.1.0](https://github.com/testosa-com/testosa/compare/v1.0.6...v1.1.0) (2022-03-25)
 
 
