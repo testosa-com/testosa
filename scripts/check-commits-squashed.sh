@@ -13,7 +13,7 @@ if [ -z $currentBranch ]; then
   currentBranch=$(git rev-parse --abbrev-ref HEAD)
 fi
 
-dependabotBranchRegex="^(dependabot)\/npm_and_yarn\/([a-zA-Z0-9_-].+\/)?epic\/(IN|PSS)-[0-9][0-9][0-9]\/.+$"
+dependabotBranchRegex="^(dependabot)\/npm_and_yarn\/([a-zA-Z0-9_-].+)"
 epicBranchRegex="^epic"
 
 if [[ $currentBranch =~ $dependabotBranchRegex ]]; then
