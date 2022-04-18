@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 30
-    target-branch: build/lib-dependency-updates
+    target-branch: build/dependency-updates
     commit-message:
       prefix: "build"
       include: "scope"
@@ -14,7 +14,7 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 30
-    target-branch: build/website-dependency-updates
+    target-branch: build/dependency-updates
     commit-message:
       prefix: "build"
       include: "scope"
