@@ -13,7 +13,7 @@ commands:
 jobs:
   "Lint and Test":
     docker:
-      - image: node:12.16.1-alpine3.9
+      - image: node:12.22.10-alpine3.15
     steps:
       - checkout
       - run:
@@ -130,7 +130,7 @@ jobs:
 
 workflows:
   version: 2
-  "Lint and Test > Release Library":
+  "Validate > Publish Library > Deploy Website > Publish Docker Image":
     jobs:
       - "Lint and Test"
       - "Release Library":
