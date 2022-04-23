@@ -13,12 +13,9 @@ commands:
 jobs:
   "Lint and Test":
     docker:
-      - image: node:12.22.10-alpine3.15
+      - image: node:12.22.10
     steps:
       - checkout
-      - run:
-          name: Install system dependencies
-          command: apk update && apk upgrade && apk add --no-cache bash git
       - run:
           name: Check branch name
           command: >
