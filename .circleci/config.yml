@@ -95,11 +95,8 @@ jobs:
           container-image-name-updates: container=ttsa-website,tag=$(git rev-parse HEAD)
           family: ttsa-website
   "Build and Publish Docker Image":
-    docker:
-      - image: docker:20.10.11
+    machine: true
     steps:
-      - setup_remote_docker:
-          version: 20.10.11
       - checkout
       - attach_workspace:
           at: ~/ttsa-npm-lib
@@ -141,13 +138,13 @@ workflows:
           context: testosa-prod
           filters:
             branches:
-              only: /(master|[0-9]+\.x\.x)/
+              only: master
           requires:
             - "Release Library"
       - "Build and Publish Docker Image":
           context: testosa-prod
-          filters:
-            branches:
-              only: /(master|[0-9]+\.x\.x)/
-          requires:
-            - "Build and Deploy Website"
+#          filters:
+#            branches:
+#              only: /(master|[0-9]+\.x\.x)/
+#          requires:
+#            - "Build and Deploy Website"
