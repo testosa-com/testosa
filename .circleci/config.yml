@@ -123,12 +123,25 @@ jobs:
           command: >
             docker image push testosa/testosa:$(cat ~/ttsa-npm-lib/version.txt)
             docker image push testosa/testosa:latest
+  "CMD":
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Run CMD
+          command: |
+            echo "tst"
+            echo "cnfrm"
 
 workflows:
   version: 2
   "Validate > Publish Library > Deploy Website > Publish Docker Image":
     jobs:
-      - "Lint and Test"
+      - "CMD"
+      - "Lint and Test":
+          filters:
+            branches:
+              only: master
       - "Release Library":
           context: testosa-prod
           filters:
