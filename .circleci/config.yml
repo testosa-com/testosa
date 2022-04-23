@@ -120,7 +120,7 @@ jobs:
               .
       - run:
           name: Publish Docker image
-          command: >
+          command: |
             docker image push testosa/testosa:$(cat ~/ttsa-npm-lib/version.txt)
             docker image push testosa/testosa:latest
 
