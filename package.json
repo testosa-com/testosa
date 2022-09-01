@@ -43,7 +43,7 @@
     "chalk": "^4.1.2",
     "chance": "^1.1.7",
     "cli-table": "^0.3.6",
-    "figures": "^4.0.0",
+    "figures": "^5.0.0",
     "form-data": "^4.0.0",
     "inquirer": "^8.1.2",
     "is-reachable": "^5.0.0",
